@@ -15,6 +15,12 @@ class Program
         car.gallons = 10;
         car.milesPerGallon = 30;
 
+        var owner = new Person();
+        owner.name = "John";
+        owner.phone = "555-2638";
+        car.owner = owner;
+
+
         cars.Add(car);
 
 
@@ -25,12 +31,17 @@ class Program
         car.gallons = 30;
         car.milesPerGallon = 5;
 
+        owner = new Person();
+        owner.name = "Sue";
+        owner.phone = "666-6428";
+        car.owner = owner;
+
         cars.Add(car);
 
 
         foreach (var c in cars)
         {
-           c.Display();
+            c.Display();
         }
 
     }

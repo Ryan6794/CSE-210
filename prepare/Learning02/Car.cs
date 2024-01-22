@@ -1,3 +1,5 @@
+using System.IO.Pipes;
+
 class Car
 {
     public string model;
@@ -5,6 +7,7 @@ class Car
     public int year;
     public int milesPerGallon;
     public int gallons;
+    public Person owner;
 
     public int TotalRange()
     {
@@ -13,8 +16,9 @@ class Car
 
     public void Display()
     {
-        Console.WriteLine($"{make} {model} {year}: totalRange = {TotalRange()}");
+        Console.WriteLine($"{make} {model} {year} {owner.DisplayString()}: totalRange = {TotalRange()}");
     }
 
 
 }
+
