@@ -1,3 +1,5 @@
+// Author Ryan Lyman
+using System.Runtime.CompilerServices;
 
 public class Journal
 {
@@ -8,28 +10,56 @@ public class Journal
         entries = new List<Entry>();
     }
 
-    public Journal(string import)
-    {
-
-    }
+    // public Journal(string[] importLines)
+    // {
+    //     entries = new List<Entry>();
+    //     foreach (string line in importLines)
+    //     {
+    //         // var car = new  car(line);
+    //         // cars.Add(car);
+    //     }
+    // }
 
     public void Display()
     {
-        foreach(string entry in entries)
+        foreach (var entry in entries)
         {
-            Console.WriteLine("");
+            Console.WriteLine(entry.DisplayString());
         }
-
     }
 
-    public static string Export()
-    {
-        return "";
-    }
 
-    public void AddEntry(Entry entry)
+
+    public void AddEntry()
     {
+        string prompt = Entry.Prompt();
+        string response = GatherInput(prompt);
+        string date = Entry.GetDate();
+        var entry = new Entry(response, prompt, date);
         entries.Add(entry);
+
     }
+
+    private string GatherInput(string prompt)
+    {
+        Console.WriteLine(prompt);
+        return Console.ReadLine();
+    }
+
+
+
+
+    public string[] Export()
+    {
+        var exportLines = new List<string>();
+        foreach (var entry in entries)
+        {
+            exportLines.Add(entry.Export());
+        }
+        return exportLines.ToArray();
+    }
+
+
+
 
 }

@@ -1,3 +1,5 @@
+//Author Ryan Lyman
+using System.Xml.Serialization;
 
 public class Entry
 {
@@ -6,9 +8,27 @@ public class Entry
     public string date;
 
 
-    public Entry(string response, string prompt);
+    public Entry(string response, string prompt, string date)
+    {
         this.response = response;
         this.prompt = prompt;
+        this.date = date;
+    }
+
+    public Entry(string import)
+    {
+        var parts = import.Split("|");
+        this.date = parts[0];
+        this.prompt = parts[1];
+        this.response = parts[2];
+
+    }
+
+
+    public string Export()
+    {
+        return $"(date)|(prompt)|(response)";
+    }
 
 
     public static string Prompt()
@@ -17,34 +37,38 @@ public class Entry
         int randomNumber = random.Next(1, 5);
         if (randomNumber == 1)
         {
-            Console.WriteLine("Who was the most interesting person I interacted with today?");
+            return "Who was the most interesting person I interacted with today?";
         }
         if (randomNumber == 2)
         {
-            Console.WriteLine("What was the best part of my day?");
+            return "What was the best part of my day?";
         }
         if (randomNumber == 3)
         {
-            Console.WriteLine("How did I see the hand of the Lord in my life today?");
+            return "How did I see the hand of the Lord in my life today?";
         }
         if (randomNumber == 4)
         {
-            Console.WriteLine("What was the strongest emotion I felt today?");
+            return "What was the strongest emotion I felt today?";
         }
         if (randomNumber == 5)
         {
-            Console.WriteLine("If I had one thing I could do over today, what would it be?");
+            return "If I had one thing I could do over today, what would it be?";
         }
-        return Console.ReadLine();
+        return "Fail";
     }
 
     public static string GetDate()
     {
-        DateTime now = DateTime.Now;
-        return now.ToString("F");
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+        return dateText;
+
     }
 
-
-
+    public string DisplayString()
+    {
+        return $"{date} {prompt} {response}";
+    }
 }
 
