@@ -10,15 +10,7 @@ public class Journal
         entries = new List<Entry>();
     }
 
-    // public Journal(string[] importLines)
-    // {
-    //     entries = new List<Entry>();
-    //     foreach (string line in importLines)
-    //     {
-    //         // var car = new  car(line);
-    //         // cars.Add(car);
-    //     }
-    // }
+
 
     public void Display()
     {

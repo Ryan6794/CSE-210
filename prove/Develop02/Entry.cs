@@ -1,5 +1,4 @@
 //Author Ryan Lyman
-using System.Xml.Serialization;
 
 public class Entry
 {
