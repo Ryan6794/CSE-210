@@ -1,8 +1,6 @@
 //Author Ryan Lyman
 using System;
-using System.ComponentModel;
-using System.IO;
-using System.Net;
+
 
 class Program
 {
@@ -19,11 +17,11 @@ class Program
             Menu = ShowMenu();
             if (Menu == 1)
             {
-                journal.AddEntry(); //good
+                journal.AddEntry(); 
             }
             if (Menu == 2)
             {
-                journal.Display(); //good
+                journal.Display(); 
             }
             if (Menu == 3)
             {
@@ -49,19 +47,19 @@ class Program
     }
 
 
-    public static string[] LoadFromFile()
+     static string[] LoadFromFile()
     {
         Console.WriteLine("What file do you want to read from?");
-        string fileName = Console.ReadLine();
-        return System.IO.File.ReadAllLines(fileName);
+        var filename = Console.ReadLine();
+        return System.IO.File.ReadAllLines(filename);
 
     }
 
 
-    public static void SaveToFile(string[] lines)
+    static void SaveToFile(string[] lines)
     {
         Console.WriteLine("What file do you want to save to?");
-        string fileName = Console.ReadLine();
-        System.IO.File.WriteAllLines(fileName, lines);
+        var filename = Console.ReadLine();
+        System.IO.File.WriteAllLines(filename, lines);
     }
 }
