@@ -11,6 +11,17 @@ public class Journal
     }
 
 
+    public Journal(string[] importLines)
+    {
+        entries = new List<Entry>();
+        foreach (var line in importLines)
+        {
+            var entry = new Entry(line);
+            entries.Add(entry);
+        }
+    }
+
+
 
     public void Display()
     {

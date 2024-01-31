@@ -32,7 +32,7 @@ class Program
             if (Menu == 4)
             {
                 var lines = LoadFromFile();
-                journal = new Journal();
+                journal = new Journal(lines);
             }
             if (Menu == 5)
             {
@@ -62,12 +62,12 @@ class Program
         Console.WriteLine("What file do you want to save to?");
         var filename = Console.ReadLine();
 
+        System.IO.File.WriteAllLines(filename, lines);
 
-
-        using (StreamWriter outputFile = new StreamWriter(filename))
-        {
-            outputFile.WriteLine(lines);
-            System.IO.File.WriteAllLines(filename, lines);
-        }
+        // using (StreamWriter outputFile = new StreamWriter(filename))
+        // {
+        //     outputFile.WriteLines(lines);
+            
+        // }
     }
 }

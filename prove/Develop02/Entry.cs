@@ -26,7 +26,7 @@ public class Entry
 
     public string Export()
     {
-        return $"(date)|(prompt)|(response)";
+        return $"{date}|{prompt}|{response}";
     }
 
 
