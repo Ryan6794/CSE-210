@@ -46,9 +46,9 @@ class Person
     }
 
 
-    public virtual string Display()
+    public virtual void Display()
     {
-        return $"{name}: {id}";
+        Console.WriteLine($"{name}: {id}");
         
     }
 }
@@ -80,7 +80,7 @@ class Faculty : Person
     }
 
 
-    public void Display()
+    public override void Display()
     {
         base.Display();
         Console.WriteLine($"\t{department}");
