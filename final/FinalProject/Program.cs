@@ -24,20 +24,20 @@ class Program
                     int NewBook = int.Parse(Console.ReadLine());
                     if (NewBook == 1)
                     {
-
+                        // to do
                     }
                     else if (NewBook == 2)
                     {
-
+                        // to do
                     }
                 }
                 else if (NewMat == 2)
                 {
-
+                    // to do
                 }
                 else if (NewMat == 3)
                 {
-
+                    // to do
                 }
             }
             else if (menu == 2)
@@ -47,6 +47,7 @@ class Program
             else if (menu == 3)
             {
                 Console.WriteLine("What type of material would you like to list?\n1. Fiction Books \n2.Non Fiction Books\n3. Movies\n4. Magazines");
+                // to do
             }
             else if (menu == 4)
             {
