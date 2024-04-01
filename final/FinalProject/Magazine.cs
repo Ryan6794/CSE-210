@@ -9,6 +9,6 @@ class Magazine : Material
 
     public override void Display()
     {
-        Console.WriteLine($"Title: {_Title} Publisher: {_Publisher} Illustrator or Photographer: {_Illustrator} Genre: {_Genre} Release Date: {_ReleaseDate} CatalogNumber: {_CatalogNumber}");
+        Console.WriteLine($"\nMagazine --- \nTitle: {_Title} \nPublisher: {_Publisher} \nIllustrator or Photographer: {_Illustrator} \nGenre: {_Genre} \nRelease Date: {_ReleaseDate} \nCatalogNumber: {_CatalogNumber}");
     }
 }

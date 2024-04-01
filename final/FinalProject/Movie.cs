@@ -12,7 +12,7 @@ class Movie : Material
 
     public override void Display()
     {
-        Console.WriteLine($"Title: {_Title} Publisher: {_Publisher} Rating: {_Rating} Length: {_WatchTime} Genre: {_Genre} Release Date: {_ReleaseDate} CatalogNumber: {_CatalogNumber}");
+        Console.WriteLine($"\nMovie --- \nTitle: {_Title} \nPublisher: {_Publisher} \nRating: {_Rating} \nLength: {_WatchTime} \nGenre: {_Genre} \nRelease Date: {_ReleaseDate} \nCatalogNumber: {_CatalogNumber}");
     }
 
 }

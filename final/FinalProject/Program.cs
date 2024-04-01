@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -24,20 +25,20 @@ class Program
                     int NewBook = int.Parse(Console.ReadLine());
                     if (NewBook == 1)
                     {
-                        // to do
+                        Library.NewMat(4);
                     }
                     else if (NewBook == 2)
                     {
-                        // to do
+                        Library.NewMat(3);
                     }
                 }
                 else if (NewMat == 2)
                 {
-                    // to do
+                    Library.NewMat(1);
                 }
                 else if (NewMat == 3)
                 {
-                    // to do
+                    Library.NewMat(2);
                 }
             }
             else if (menu == 2)
@@ -55,4 +56,6 @@ class Program
             }
         }
     }
+
+
 }

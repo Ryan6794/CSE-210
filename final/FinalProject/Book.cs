@@ -1,6 +1,5 @@
 
 
-
 abstract class Book : Material
 {
 

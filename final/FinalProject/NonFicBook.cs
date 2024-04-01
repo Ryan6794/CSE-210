@@ -12,6 +12,6 @@ class NonFicBook : Book
 
     public override void Display()
     {
-        Console.WriteLine($"Title: {_Title} Author: {_Author} Publisher: {_Publisher} Location: {_DeweyDec} Genre: {_Genre} ISBN: {_ISBN} Release Date: {_ReleaseDate} CatalogNumber: {_CatalogNumber}");
+        Console.WriteLine($"\nNon Fiction Book ---\nTitle: {_Title} \nAuthor: {_Author} \nPublisher: {_Publisher} \nLocation: {_DeweyDec} \nGenre: {_Genre} \nISBN: {_ISBN} \nRelease Date: {_ReleaseDate} \nCatalogNumber: {_CatalogNumber}");
     }
 }
