@@ -6,7 +6,7 @@ class Library
     private static string publisher;
     private static string genre;
     private static string releaseDate;
-    private static List<Material> MaterialList = new List<Material>();
+    private static List<Material> materialList = new List<Material>();
 
     public static void StartUp()
     {
@@ -16,17 +16,51 @@ class Library
         NonFicBook nonFicBook1 = new NonFicBook(532.7, 4230123456789, "Jane Doe", "The Fall of Rome", 4444, "ABC Publishers", "History", "2012-09-24");
 
 
-        MaterialList.Add(movie1);
-        MaterialList.Add(magazine1);
-        MaterialList.Add(ficBook1);
-        MaterialList.Add(nonFicBook1);
+        materialList.Add(movie1);
+        materialList.Add(magazine1);
+        materialList.Add(ficBook1);
+        materialList.Add(nonFicBook1);
     }
 
 
 
     public static void DisplayMat()
     {
-        foreach (Material Mat in MaterialList)
+        foreach (Material Mat in materialList)
+        {
+            Mat.Display();
+        }
+    }
+
+    public static void DisplayTypeOfMat(int type)
+    {
+
+
+        IEnumerable<Material> filteredMaterials = null;
+
+        switch (type)
+        {
+            case 1:
+                filteredMaterials = materialList.OfType<Book>();
+                break;
+            case 2:
+                filteredMaterials = materialList.OfType<FicBook>();
+                break;
+            case 3:
+                filteredMaterials = materialList.OfType<NonFicBook>();
+                break;
+            case 4:
+                filteredMaterials = materialList.OfType<Movie>();
+                break;
+            case 5:
+                filteredMaterials = materialList.OfType<Magazine>();
+                break;
+            default:
+                Console.WriteLine("Not a valid entry.");
+                return;
+        }
+
+        foreach (Material Mat in filteredMaterials)
         {
             Mat.Display();
         }
@@ -44,7 +78,7 @@ class Library
                 string duration = Console.ReadLine();
                 GetInfo();
                 Movie newMovie = new Movie(rating, duration, title, catalogNumber, publisher, genre, releaseDate);
-                MaterialList.Add(newMovie);
+                materialList.Add(newMovie);
                 break;
             case 2:
                 Console.WriteLine("Enter magazine details:");
@@ -52,7 +86,7 @@ class Library
                 string illustrator = Console.ReadLine();
                 GetInfo();
                 Magazine newMag = new Magazine(illustrator, title, catalogNumber, publisher, genre, releaseDate);
-                MaterialList.Add(newMag);
+                materialList.Add(newMag);
                 break;
             case 3:
                 Console.WriteLine("Enter fiction book details:");
@@ -64,7 +98,7 @@ class Library
                 long ISBN = long.Parse(Console.ReadLine());
                 GetInfo();
                 FicBook newFicBook = new FicBook(authorCode, ISBN, author, title, catalogNumber, publisher, genre, releaseDate);
-                MaterialList.Add(newFicBook);
+                materialList.Add(newFicBook);
                 break;
             case 4:
                 Console.WriteLine("Enter non-fiction book details:");
@@ -76,7 +110,7 @@ class Library
                 ISBN = long.Parse(Console.ReadLine());
                 GetInfo();
                 NonFicBook newNonFicBook = new NonFicBook(DeweyDecimal, ISBN, author, title, catalogNumber, publisher, genre, releaseDate);
-                MaterialList.Add(newNonFicBook);
+                materialList.Add(newNonFicBook);
                 break;
             default:
                 Console.WriteLine("Invalid choice.");

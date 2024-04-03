@@ -1,5 +1,4 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
+
 
 class Program
 {
@@ -47,8 +46,9 @@ class Program
             }
             else if (menu == 3)
             {
-                Console.WriteLine("What type of material would you like to list?\n1. Fiction Books \n2.Non Fiction Books\n3. Movies\n4. Magazines");
-                // to do
+                Console.WriteLine("What type of material would you like to list?\n1. All Books \n2. Fiction Books \n3. Non Fiction Books\n4. Movies\n5. Magazines");
+                int type = int.Parse(Console.ReadLine());
+                Library.DisplayTypeOfMat(type);
             }
             else if (menu == 4)
             {
