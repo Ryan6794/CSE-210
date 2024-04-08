@@ -2,20 +2,20 @@
 
 abstract class Material
 {
-    protected string _Title;
-    protected int _CatalogNumber;
-    protected string _Publisher;
-    protected string _Genre;
-    protected string _ReleaseDate;
+    protected string _title;
+    protected int _catalogNumber;
+    protected string _publisher;
+    protected string _genre;
+    protected string _releaseDate;
 
 
-    public Material(string Title, int CatalogNumber, string Publisher, string Genre, string ReleaseDate)
+    public Material(string title, int catalogNumber, string publisher, string genre, string releaseDate)
     {
-        this._Title = Title;
-        this._CatalogNumber = CatalogNumber;
-        this._Publisher = Publisher;
-        this._Genre = Genre;
-        this._ReleaseDate = ReleaseDate;
+        this._title = title;
+        this._catalogNumber = catalogNumber;
+        this._publisher = publisher;
+        this._genre = genre;
+        this._releaseDate = releaseDate;
     }
 
 
